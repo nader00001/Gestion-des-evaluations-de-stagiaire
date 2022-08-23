@@ -1,0 +1,83 @@
+
+<div class="container" id="main-container">
+  <div class="submit-form">
+
+    <div *ngIf="!submitted" [formGroup]="userForm">
+      <div class="form-group">
+        <label for="title">Intitule de la Formation</label>
+        <input type="text" class="form-control" formControlName="Intitule" id="title" required  placeholder=" Intitule de la Formation"/>
+        <small *ngIf="userForm.get('Intitule')?.invalid && userForm.get('Intitule')?.touched " class="text-danger">il faut maitre l'intitule de votre formation </small>
+      </div>
+
+
+        <div class="form-group">
+          <label for="title">Nom du Formateur :</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            
+            name="name"
+            placeholder="Nom du Formateur  "
+            formControlName="Nomf"
+          />
+          <small *ngIf="Nomf?.invalid && Nomf?.touched" class="text-danger">il faut maitre le nom de vautre formateur </small>
+
+        </div>
+        <!-- <div class="form-group">
+          <label for="title">Date de la Formation</label>
+          <input
+            type="date"
+            class="form-control"
+            id="title"
+            required
+            [(ngModel)]="appuser.date"
+            name="name"
+            placeholder="Date de la Formation"
+            formControlName="date"
+          />
+          <small *ngIf="userForm.get('date')?.invalid && userForm.get('date')?.touched" class="text-danger">il faut maitre la date de formation </small>
+
+        </div> -->
+        <div class="input-group">
+          <span class="input-group-text" for="title">Date de la Formation</span>
+          <input type="date" aria-label="First name" class="form-control" formControlName="date" placeholder="Du">
+          <input type="date" aria-label="Last name" class="form-control" formControlName="datef" placeholder="Au">
+          <small *ngIf="userForm.get('date')?.invalid && userForm.get('date')?.touched" class="text-danger">il faut maitre la date de formation </small>
+
+        </div>
+        <div class="form-group">
+          <label for="title">Lieu de la Formation</label>
+          <input type="text" class="form-control" id="title" formControlName="lieu" name="lieu" placeholder="Lieu de la Formation "/>
+          <small *ngIf="userForm.get('lieu')?.invalid && userForm.get('lieu')?.touched" class="text-danger">il faut maitre le lieu de formation </small>
+        </div>
+        <div class="form-group">
+          <label for="title">Nom de participant (Facultatif):</label>
+          <input type="text" class="form-control" id="title" formControlName="Nomp" required  name="Nomp" placeholder="Nom de participant (Facultatif) "/>
+          <small *ngIf="userForm.get('Nomp')?.invalid && userForm.get('Nomp')?.touched" class="text-danger">il faut maitre le nom de participant </small>
+        </div>
+        <div class="form-group">
+          <label for="title">Etablissement du participant(Facultatif):</label>
+          <input type="text" class="form-control" id="etabli" formControlName="etabli" required  name="etabli" placeholder="Etablissement du participant(Facultatif) "/>
+          <small *ngIf="userForm.get('etabli')?.invalid && userForm.get('etabli')?.touched" class="text-danger">il faut maitre votre etablissement </small>
+        </div>
+        <div>
+          <!-- <button  class="btn btn-success"></button> -->
+        </div>
+        <div>
+          <a  (click)="saveuser()" [attr.disabled]="userForm.invalid" class="btn btn-outline-primary">Submit</a>
+        </div>
+
+      </div>
+      <div *ngIf="submitted">
+        <h4>user was submitted successfully!</h4>
+        <!-- <button class="btn btn-success" (click)="newEMPLO()">Add</button> -->
+      </div>
+
+
+    </div>
+    </div>
+
+
+

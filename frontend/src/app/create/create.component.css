@@ -1,0 +1,65 @@
+.container{
+  position: absolute;
+  top:70%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  width: 400px;
+
+  background: #BAE8E8;
+  border-radius: 10px;
+
+}
+.centre h1{
+  text-align: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid silver;
+
+}
+
+.centre .submit-form{
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+div .form-control{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border :none ;
+  background: none;
+  outline: none;
+}
+title{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.form-control.ng-touched.ng-invalid{
+  border: 1px solid red;
+}
+.form-control.form-control.ng-invalid{
+  border: 1px solid green;
+}
+
+div .form-input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border :none ;
+  background: none;
+  outline: none;
+}
+.form-input.ng-touched.ng-invalid{
+  border: 1px solid red;
+}
+.form-input.form-control.ng-invalid{
+  border: 1px solid green;
+}
+

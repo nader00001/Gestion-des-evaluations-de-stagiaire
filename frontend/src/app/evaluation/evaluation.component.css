@@ -1,0 +1,21 @@
+table.container{
+    width: 100px;
+    height: auto;
+    margin: 10px auto;
+
+
+}
+th.container{
+    height: 300px;
+    box-sizing: border-box;
+    font-size: 50px;
+    display: flex;
+
+    
+}
+@media screen and (max-width:1200px){
+    .box{
+        width: 40%;
+    }
+    
+}

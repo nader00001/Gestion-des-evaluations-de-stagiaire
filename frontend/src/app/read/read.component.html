@@ -1,0 +1,111 @@
+<div class="container mt-5">
+  <div *ngIf="succemsg" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{succemsg}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Intitule de la Formation Formateur</th>
+            <th scope="col">Nom du Formateur</th>
+            <th scope="col">Date de la Formation</th>
+            <th scope="col">Lieu de Formation</th>
+            <th scope="col">Nom de participant (facultatif)</th>
+            <th scope="col">Etablissement du participant(facultatif)</th>
+            <th scope="col"> Edites</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let us of users'>
+            <th scope="row">{{us.id}}</th>
+            <td>{{us.Intitule}}</td>
+            <td>{{us.Nomf}}</td>
+            <td>{{us.date}}</td>
+            <td>{{us.lieu}}</td>
+            <td>{{us.Nomp}}</td>
+            <td>{{us.etabli}}</td>
+            <td><button class="btn btn-sm btn-danger" (click)="deleteID(us.id)">delete</button>
+              &nbsp;
+              <a  [routerLink]="['/create',us.id]" (click)="userUpdate()"  class="btn btn-sm btn-success">Update</a>
+            </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+</div> 
+
+
+
+<div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">
+        #
+      </th>
+      <th scope="col">
+        note
+      </th>
+      <th scope="col">
+        date
+      </th>
+      <th scope="col">
+        Edites
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let us of evals">
+      <th scope="row">{{us.id}}</th>
+      <td>{{us.note}}</td>
+      <td>{{us.date}}</td>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="deletID(us.id)">delete</button>
+              &nbsp;
+              <a  [routerLink]="['/evaluation',us.id]" (click)="evalUpdate()" class="btn btn-sm btn-success">Update</a>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
+</div>
+
+
+<div>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Lequels</th>
+        <th scope="col">Nom</th>
+        <th scope="col">tel</th>
+        <th scope="col">fax</th>
+        <th scope="col">email</th>
+        <th scope="col">text suggestion</th>
+        <th scope="col"> Edites</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let us of quests'>
+        <th scope="row">{{us.id}}</th>
+        <th>{{us.text_lequel}}</th>
+        <td>{{us.text_nom}}</td>
+        <td>{{us.tel}}</td>
+        <td>{{us.fax}}</td>
+        <td>{{us.mail}}</td>
+        <td>{{us.text_sug}}</td>
+        
+        <td><button class="btn btn-sm btn-danger" (click)="deletedID(us.id)">delete</button>
+          &nbsp;
+          <a  [routerLink]="['/home',us.id]" (click)="questUpdate()" class="btn btn-sm btn-success">Update</a>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div> 
+

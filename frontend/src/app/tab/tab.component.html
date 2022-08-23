@@ -1,0 +1,22 @@
+<table class="table table-bordered border-primary" >
+    <thead>
+      <tr>
+        <th scope="col">{{titre1}}</th>
+        <th scope="col">Tres bien (5)</th>
+        <th scope="col">bien (4)</th>
+        <th scope="col">Moyen (3)</th>
+        <th scope="col">Non Satisfisant (0)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <th scope="row">{{titre2}}</th>
+        <td *ngFor="let i of [5 ,4,3,0]">
+          <input type="radio" (change)="getValeur($event ,i )" name="{{name}}">
+        </td>
+        
+      </tr>
+  
+  
+    </tbody>
+</table>

@@ -1,0 +1,46 @@
+<div class="container" *ngIf="!submitted">
+  <app-tab [titre1]="e.titre1"
+  [titre2]="e.titre2" [name]="'choix'+i" *ngFor="let e of titres; let i=index " (val)="remplir($event , i)">
+</app-tab>
+
+
+
+
+<table class="table table-bordered border-primary" >
+  <tbody>
+    <tr>
+      <th>
+        Note Globale de Satisfaction (la somme de notes)
+      </th>
+      <th>
+        <!-- <input type="number"  [(ngModel)]="appeval.note"> -->
+        <p > {{somme}}/20</p>
+      </th>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <a  class="btn btn-outline-primary"   (click)="saveval()">question</a>
+</div>
+<div *ngIf="submitted">
+  <h4>not was submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEMPLO()">Add</button> -->
+</div>
+</div>
+
+
+<!-- <div class="form-group">
+          <label for="title">Date de la Formation</label>
+          <input
+            type="date"
+            class="form-control"
+            id="title"
+            required
+            [(ngModel)]="appuser.date"
+            name="name"
+            placeholder="Date de la Formation"
+            formControlName="date"
+          />
+          <small *ngIf="userForm.get('date')?.invalid && userForm.get('date')?.touched" class="text-danger">il faut maitre la date de formation </small>
+
+        </div> -->
